@@ -39,3 +39,9 @@ https://api.wordpress.org/secret-key/1.1/salt/
 
 `# Automatic updates for All plugins:`
 `add_filter( 'auto_update_plugin', '__return_true' );`
+
+
+**To Upgrade package.json**
+
+Run `npm install -g npm-check-updates` followed by `ncu -u`
+Usage here: https://www.npmjs.com/package/npm-check-updates
