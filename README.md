@@ -45,3 +45,7 @@ https://api.wordpress.org/secret-key/1.1/salt/
 
 Run `npm install -g npm-check-updates` followed by `ncu -u`
 Usage here: https://www.npmjs.com/package/npm-check-updates
+
+**To Import Adminimize Settings**
+
+Go to Adminimize, scroll to bottom and upload the .json file. Then delete the .json file from the project folder.
