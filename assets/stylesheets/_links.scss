@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: black;
+}
+
+a:hover,
+a:active,
+a:focus {
+	outline: 0;
+}

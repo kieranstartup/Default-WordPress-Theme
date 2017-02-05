@@ -78,12 +78,12 @@ function project_scripts() {
 add_action( 'wp_enqueue_scripts', 'project_scripts' );
 
 
- /**
-  * Add custom image sizes
-  */
+/**
+ * Add custom image sizes
+ * (True = Cropped) This is 2X the dimensions the thumbnails will be displayed at for Retina purposes
+*/
 // if ( function_exists( 'add_image_size' ) ) { 
-// 	// add_image_size( 'project-thumbnail', 290, 216, true ); // (True = Cropped) This is 2X the dimensions the thumbnails will be displayed at for Retina purposes
-// 	add_image_size( 'project-thumbnail', 400, 300, true ); // (True = Cropped) This is 2X the dimensions the thumbnails will be displayed at for Retina purposes
+// add_image_size( 'project-thumbnail', 290, 216, true ); 
 // }
 
 /**
