@@ -1,11 +1,11 @@
 {
-  "name": "projects",
+  "name": "project-wp-theme",
   "author": "kieran-startup",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kieranstartup/default-project-theme"
+    "url": "https://github.com/kieranstartup/project-wp-theme"
   },
   "dependencies": {},
   "devDependencies": {

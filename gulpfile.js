@@ -33,15 +33,6 @@ var project = 'default-project-theme'; // Project Name.
 var projectURL = 'http://localhost/~atlas/fill-this-in/'; // Project URL. Could be something like localhost:8888.
 var productURL = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
-// Translation related.
-// var text_domain = 'WPGULP'; // Your textdomain here.
-// var destFile = 'WPGULP.pot'; // Name of the transalation file.
-// var packageName = 'WPGULP'; // Package name.
-// var bugReport = 'https://AhmadAwais.com/contact/'; // Where can users report bugs.
-// var lastTranslator = 'Ahmad Awais <your_email@email.com>'; // Last translator Email ID.
-// var team = 'WPTie <your_email@email.com>'; // Team's Email ID.
-// var translatePath = './languages'; // Where to save the translation files.
-
 // Style related.
 var styleSRC = './assets/stylesheets/stylesheet.scss'; // Path to main .scss file.
 var styleDestination = './'; // Path to place the compiled CSS file.
@@ -60,7 +51,7 @@ var jsCustomFile = 'custom'; // Compiled JS custom file name.
 // Default set to custom i.e. custom.js.
 
 // Images related.
-var imagesSRC = './assets/img/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
+var imagesSRC = './assets/img/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
 var imagesDestination = './img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 // Watch files paths.
@@ -72,7 +63,7 @@ var projectPHPWatchFiles = './**/*.php'; // Path to all PHP files.
 
 // Browsers you care about for autoprefixing.
 // Browserlist https        ://github.com/ai/browserslist
-const AUTOPREFIXER_BROWSERS = [
+var AUTOPREFIXER_BROWSERS = [
     'last 2 version',
     '> 1%',
     'ie >= 9',
@@ -173,8 +164,8 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
-            outputStyle: 'compact',
-            //outputStyle: 'compressed',
+            // outputStyle: 'compact',
+            outputStyle: 'compressed',
             // outputStyle: 'nested',
             // outputStyle: 'expanded',
             precision: 10
@@ -277,39 +268,13 @@ gulp.task('images', function() {
     gulp.src(imagesSRC)
         .pipe(imagemin({
             progressive: true,
-            optimizationLevel: 6, // 0-7 low-high
+            optimizationLevel: 7, // 0-7 low-high
             interlaced: true,
             svgoPlugins: [{ removeViewBox: false }]
         }))
         .pipe(gulp.dest(imagesDestination))
         .pipe(notify({ message: 'TASK: "images" Completed! ', onLast: true }));
 });
-
-
-/**
- * WP POT Translation File Generator.
- *
- * * This task does the following:
- *     1. Gets the source of all the PHP files
- *     2. Sort files in stream by path or any custom sort comparator
- *     3. Applies wpPot with the variable set at the top of this file
- *     4. Generate a .pot file of i18n that can be used for l10n to build .mo file
- */
-// gulp.task('translate', function() {
-//     return gulp.src(projectPHPWatchFiles)
-//         .pipe(sort())
-//         .pipe(wpPot({
-//             domain: text_domain,
-//             destFile: destFile,
-//             package: packageName,
-//             bugReport: bugReport,
-//             lastTranslator: lastTranslator,
-//             team: team
-//         }))
-//         .pipe(gulp.dest(translatePath))
-//         .pipe(notify({ message: 'TASK: "translate" Completed! ', onLast: true }));
-
-// });
 
 
 /**
