@@ -49,3 +49,6 @@ Usage here: https://www.npmjs.com/package/npm-check-updates
 **To Import Adminimize Settings**
 
 Go to Adminimize, scroll to bottom and upload the .json file. Then delete the .json file from the project folder.
+
+**Security / Hardening**
+Visit this link and read everything: https://codex.wordpress.org/Hardening_WordPress
