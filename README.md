@@ -52,3 +52,13 @@ Go to Adminimize, scroll to bottom and upload the .json file. Then delete the .j
 
 **Security / Hardening**
 Visit this link and read everything: https://codex.wordpress.org/Hardening_WordPress
+
+
+**SSL / HTTPS **
+Add this at top of .htaccess. Change yoursite.com for the URL.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://www.yoursite.com/$1 [R,L]
+</IfModule>
